@@ -1,0 +1,43 @@
+<h1>Mostruário Rômulo</h1>
+<p>teste</p>
+<div class="card-body">
+  <div *ngIf="relogios">
+    <div class="container my-5">
+      <div class="row d-flex">
+        <div
+          *ngFor="let item of relogios"
+          class="col-12 col-md-6 col-lg-4 col-xl-3"
+        >
+          <div class="card mb-3 col p-0">
+            <div class="card-body">
+              <img
+                [src]="item.urlImagem"
+                class="card-img-top"
+                alt="imagem relógio"
+              />
+              <!-- <h5 class="card-title">Modelo: {{ item.modelo }}</h5>
+              <p class="card-text">Marca: {{ item.marca }}</p>
+              <p class="card-text">Cor: {{ item.cor }}</p>
+              <p class="card-text">R$: {{ item.preco }}</p> -->
+              <button class="btn btn-success">
+                <a
+                  aria-label="Chat on WhatsApp"
+                  href="https://wa.me/+5548988745253?text=Tenho%20interesse%20em%20comprar%20um%20relógio%20g-shock?image=https://cdn.awsli.com.br/2500x2500/1761/1761248/produto/150976162/cf8a3e423f.jpg"
+                  target="blank"
+                  >Iniciar Conversa</a
+                >
+              </button>
+              <img
+                src="https://cdn.awsli.com.br/2500x2500/1761/1761248/produto/150976162/cf8a3e423f.jpg"
+                class="card-img-top"
+                max-width="100px"
+                sizes="10px"
+                alt="imagem relógio"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

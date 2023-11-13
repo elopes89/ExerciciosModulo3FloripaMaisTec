@@ -1,0 +1,161 @@
+<app-header></app-header>
+
+<div class="container-fluid h-94">
+  <div class="row h-100p">
+    <div class="col-md-3 col-lg-2 h-100p p-0">
+      <app-sidebar></app-sidebar>
+    </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 h-100p">
+      <h4 class="mt-32">Usuários interessados</h4>
+      <hr />
+      <table class="table table-striped mt-16">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Data Nascimento</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of usuarios  index as i">
+            <th scope="row">{{u.codigo}}</th>
+            <td>{{ u.nome }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.dataDeNascimento }}</td>
+            <td>
+              <button type="button" class="btn btn-secondary">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+              <button (click)="deletar(u.codigo)" type="button" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</div>
+
+
+<div class="carousel-wrapper">
+  <div id="carouselCursos" class="carousel slide">
+    <div class="carousel-inner">
+      <div
+        class="carousel-item active"
+        data-bs-toggle="modal"
+        data-bs-target="#modalAvaliacaoCurso"
+      >
+        <img src="assets/brain.jpg" class="d-block w-100" alt="..." />
+      </div>
+      <div
+        class="carousel-item"
+        data-bs-toggle="modal"
+        data-bs-target="#modalAvaliacaoCurso"
+      >
+        <img src="assets/brain.jpg" class="d-block w-100" alt="..." />
+      </div>
+      <div
+        class="carousel-item"
+        data-bs-toggle="modal"
+        data-bs-target="#modalAvaliacaoCurso"
+      >
+        <img src="assets/brain.jpg" class="d-block w-100" alt="..." />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselCursos"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselCursos"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+<div
+  class="modal fade"
+  id="modalAvaliacaoCurso"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLabel">Avaliar Curso</h6>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="enviar()" [formGroup]="registerForm">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input
+              type="email"
+              class="form-control"
+              id="nome"
+              formControlName="nome"
+
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="dtNascimento" class="form-label"
+              >Data de nascimento</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="dtNascimento"
+              [placeholder]="'DD/MM/YYYY'"
+              formControlName="dataDeNascimento"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button   data-bs-dismiss="modal" type="submit" class="btn btn-primary" >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

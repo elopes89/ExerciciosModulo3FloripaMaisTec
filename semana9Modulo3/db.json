@@ -1,0 +1,30 @@
+{
+  "relogio": [
+    {
+      "id": 0,
+      "modelo": "g-shock",
+      "marca": "casio",
+      "cor": "preto",
+      "urlImagem": "https://static.netshoes.com.br/produtos/relogio-casio-g-shock-masculino/06/112-1336-006/112-1336-006_zoom1.jpg?ts=1683808317",
+      "preco": 150
+    },
+    {
+      "id": 1,
+      "modelo": "g-shock",
+      "marca": "casio",
+      "cor": "laranja",
+      "urlImagem": "https://cdn.awsli.com.br/2500x2500/1761/1761248/produto/150976162/cf8a3e423f.jpg",
+      "preco": 140
+    }
+     ],
+  "tenis": [
+    {
+      "id": 0,
+      "modelo": "ultra range",
+      "marca": "vans",
+      "cor": "preto",
+      "urlImagem": "/assets/Images/vansPretoRange.png",
+      "preco": 200
+    }
+  ]
+}
